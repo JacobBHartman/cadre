@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  ruby:
+    build: .
+    expose: 
+      - "3000"
+    ports:
+      - "8001:3000"
