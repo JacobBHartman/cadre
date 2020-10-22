@@ -27,6 +27,15 @@ docker-compose build
 docker-compose up
 # go to localhost:8001 in your browser
 ```
+In a separate terminal:
+```
+docker exec -it $(docker container ls | grep "cadre_ruby" | awk '{print $1}') /bin/bash
+```
+And then from within the container:
+```
+./dev/github.sh
+# follow the prompt
+```
 
 ## Purpose
 The purposes of this project are to...
@@ -71,3 +80,6 @@ Located in `/dev/diary`
 
 ### To-Do
 Handled by Github's Issue Tracking
+
+## Contributers
+JacobBHartman
