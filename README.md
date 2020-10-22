@@ -2,14 +2,20 @@
 1. API platform for water polo, and sports in general
 2. An application that interacts with the API 
 
-## Software Versions Used
-These are the versions of the software I used within a container, not what you need
-- Rails `6.0.3.4`
+## Prerequisites
+- Mac Mojave v`10.14.6`
+- Docker for Mac v`2.2.0.3`
+- Docker Engine v`19.03.5`
+- docker-compose v`1.25.4`
+- Git v`2.20.1`
 
-## Prerequisites for your Computer
-- Mac
-- Docker Engine for Mac
-- Git
+## Software
+These are the versions of the major software I used. These are not prerequisites for you to run the app.
+- Rails v`6.0.3.4`
+- Ruby v`2.7.2`
+- Node v`12.19.0`
+- sqlite3 v`3.27.2` (not currently static)
+- yarn v`1.22.5` (not currently static)
 
 ## Install
 ```
