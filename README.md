@@ -1,5 +1,26 @@
 # cadre
-Current Iteration: An API for water polo plus an application that uses the API
+1. API platform for water polo, and sports in general
+2. An application that interacts with the API 
+
+## Software Versions Used
+These are the versions of the software I used within a container, not what you need
+- Rails `6.0.3.4`
+
+## Prerequisites for your Computer
+- Mac
+- Docker Engine for Mac
+- Git
+
+## Install
+```
+# copy and paste assuming you have the prerequisites
+git clone https://github.com/JacobBHartman/cadre.git
+cd cadre
+docker-compose build
+# docker-compose build --no-cache is slower but better if Dockers image cache interfere
+docker-compose up
+# go to localhost:8001 in your browser
+```
 
 ## Purpose
 The purposes of this project are to...
@@ -20,52 +41,27 @@ The purposes of this project are to...
     - System design and justification
 3. build a project that I've been wanting to build for two years now 
 
-## (un)measureable, (un)clear Goals
-### MVP, MVP, MVP: Version 0 (local)
-    - Do as little as possible on the frontend, that's not my focus
-    - SQLite > Postgres
-    - Go through the RoR tutorial then appropriate for my own use
-    - A user should be able to install and run this app locally as easily as possible
-    - CRUD and REST API for "games" that are played by "teams". No "leagues", "pools", or "people".
-    - Decoupled, simple application that lists games played dynamically. Also shows standings.
-### Make External: Version 1
+### Topics to add to README
+* Configuration
+* Database creation
+* Database initialization
+* How to run the test suite
+* Services (job queues, cache servers, search engines, etc.)
+* Deployment instructions
+
+### Scope
+I define project scope using Github Projects
+- MVP, MVP, MVP: Version 0 (local)
+- Make External: Version 1
     - The app should be externally available on a working domain name
     - Minimum AWS, Terraform, Docker files, Jenkins. Ansible if necessary
-### Mature: Version X
+- Mature: Version X
     - Complete API: pools, players, coaches, games, scores, etc.
     - Not water polo specific
     - Example applicaton that looks good and uses the API
 
-## To-Do
-Handled by Github's issue tracking
+### Dev Diary
+Located in `/dev/diary`
 
-## Install
-```
-Here goes the script that a user should be able to use to clone and install cadre in 1 go
-```
-
-## Dev Diary
-
-### October 21st, 2020
-I started this project in order to dockerize a rails app. I've never worked with rails before. It took me a while to figure out how to setup the container. At first I tried installing ruby+rails+node+yarn myself but then decided to use the official ruby 2.7.2 image.
-
-I knew that I wanted to do a much better job of having static versioning. As such I'm using the latest, LTS, and/or most stable versions of software.
-- Rails is 6.0
-- Ruby is 2.7.2
-- Node is 12
-
-It took me about 4 hours of frustration to get this to work. I referenced the Dockerfile best practices page a lot.
-
-I was able to get my localhost to show the default Ruby server page, but I'm curious if I can do this without binding to `0.0.0.0`
-
-If you're going to run `set -o pipefail` in a container, you need to make sure that you're running it with `bash` or another compatible shell.
-
-I prefer to use long-form flags rather than their abbreviated forms for stuff like a Dockerfile or script.
-
-If the Ruby Dockerhub maintainers decide to mess with 2.7.2 it could mess up this app.
-
-I would like to use PostgreSQL because I've never used it before and it would justify creating another container. Then I could easily use RDS or EC2 with postgres since the app is designed to handle postgres.
-
-I tried manually installing sqlite3 but had an issue where sqlite was in the PATH and yes the shell still couldn't find the binary. I had to resort to using apt to install sqlite3. This does not allow sqlite3 to be statically versioned
-
-This app will not end up being a blog but being some sort of sports team management app.
+### To-Do
+Handled by Github's Issue Tracking
