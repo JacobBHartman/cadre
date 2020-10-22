@@ -20,8 +20,6 @@ RUN apt-get update && apt-get install --yes \
 
 RUN gem install rails --version 6.0.3.4
 
-WORKDIR /
-RUN git clone --branch main https://github.com/JacobBHartman/cadre.git
 WORKDIR /cadre
 
 
