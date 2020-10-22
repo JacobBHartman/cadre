@@ -4,12 +4,9 @@ EXPOSE 3000
 
 RUN apt-get update && apt-get install --yes \
     build-essential \
-    sqlite3
+    sqlite3 \
+    vim
 
-
-#RUN ["/bin/bash", "-c", "set -o pipefail && curl -sL https://deb.nodesource.com/setup_12.19.0 | bash -"]
-
-#RUN apt install -y nodejs
 RUN curl https://nodejs.org/dist/v12.19.0/node-v12.19.0-linux-x64.tar.xz --output node-v12.19.0-linux-x64.tar.xz
 RUN tar --extract --file node-v12.19.0-linux-x64.tar.xz
 RUN rm -rf node-v12.19.0-linux-x64.tar.xz
@@ -23,13 +20,17 @@ RUN apt-get update && apt-get install --yes \
 
 RUN gem install rails --version 6.0.3.4
 
-RUN rails new blog
-WORKDIR /blog
+WORKDIR /
+RUN git clone --branch main https://github.com/JacobBHartman/cadre.git
+WORKDIR /cadre
+
+
+#RUN rails new blog
+#WORKDIR /blog
 
 #RUN curl https://www.sqlite.org/2020/sqlite-tools-linux-x86-3330000.zip --output sqlite-tools-linux-x86-3330000.zip
 #RUN unzip sqlite-tools-linux-x86-3330000.zip
 #RUN rm sqlite-tools-linux-x86-3330000.zip
 #ENV PATH=/sqlite-tools-linux-x86-3330000:$PATH
 
-#CMD ["/bin/sh", "-c", "tail -f /dev/null"]
 CMD ["/bin/bash", "-c", "rails server -b 0.0.0.0"]
