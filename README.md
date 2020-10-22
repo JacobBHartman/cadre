@@ -17,6 +17,7 @@ The purposes of this project are to...
     - Helm, do I need this, how does it help me? This project should help answer those questions.
     - Bash, use best practices for scripting
     - AWS, I risk pigeonholing myself in AWS further but if I want to get frisky I can switch to GCP
+    - System design and justification
 3. build a project that I've been wanting to build for two years now 
 
 ## (un)measureable, (un)clear Goals
@@ -25,11 +26,15 @@ The purposes of this project are to...
     - SQLite > Postgres
     - Go through the RoR tutorial then appropriate for my own use
     - A user should be able to install and run this app locally as easily as possible
-    - I have this end-goal for a complete platform that makes accessible through an API: pools, players, coaches, games, scores, etc. but this needs to be narrowed in scope:
-    - CRUD and REST games that are played by teams, this is the api. Then I can create a decoupled app that calls the api. This app will show standings. No leagues, no pools, no people.
+    - CRUD and REST API for "games" that are played by "teams". No "leagues", "pools", or "people".
+    - Decoupled, simple application that lists games played dynamically. Also shows standings.
 ### Make External: Version 1
     - The app should be externally available on a working domain name
     - Minimum AWS, Terraform, Docker files, Jenkins. Ansible if necessary
+### Mature: Version X
+    - Complete API: pools, players, coaches, games, scores, etc.
+    - Not water polo specific
+    - Example applicaton that looks good and uses the API
 
 ## To-Do
 Handled by Github's issue tracking
