@@ -80,3 +80,6 @@ Located in `/dev/diary`
 
 ### To-Do
 Handled by Github's Issue Tracking
+
+## Contributers
+JacobBHartman
