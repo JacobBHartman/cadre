@@ -8,3 +8,6 @@ echo "Input your Github token"
 read $GITHUB_TOKEN
 git config --global github.token $GITHUB_TOKEN
 
+echo "Input your Github email"
+read $GITHUB_EMAIL
+git config --global github.email $GITHUB_EMAIL
