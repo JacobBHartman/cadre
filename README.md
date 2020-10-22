@@ -5,8 +5,8 @@
 ## Prerequisites
 - Mac Mojave `10.14.6`
 - Docker for Mac `2.2.0.3`
-- Docker Engine `19.03.5`
-- docker-compose `1.25.4`
+  - Docker Engine `19.03.5`
+  - docker-compose `1.25.4`
 - Git `2.20.1`
 
 ## Software
