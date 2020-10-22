@@ -20,11 +20,12 @@ RUN apt-get update && apt-get install --yes \
 
 RUN gem install rails --version 6.0.3.4
 
+RUN mkdir /cadre
 WORKDIR /cadre
-
-
-#RUN rails new blog
-#WORKDIR /blog
+COPY Gemfile /cadre/Gemfile
+COPY Gemfile.lock /cadre/Gemfile.lock
+RUN bundle install
+COPY . /cadre
 
 #RUN curl https://www.sqlite.org/2020/sqlite-tools-linux-x86-3330000.zip --output sqlite-tools-linux-x86-3330000.zip
 #RUN unzip sqlite-tools-linux-x86-3330000.zip
