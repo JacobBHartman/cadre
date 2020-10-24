@@ -27,6 +27,8 @@ COPY Gemfile.lock /cadre/Gemfile.lock
 RUN bundle install
 COPY . /cadre
 
+RUN yarn install --check-files
+
 #RUN curl https://www.sqlite.org/2020/sqlite-tools-linux-x86-3330000.zip --output sqlite-tools-linux-x86-3330000.zip
 #RUN unzip sqlite-tools-linux-x86-3330000.zip
 #RUN rm sqlite-tools-linux-x86-3330000.zip
